@@ -1,0 +1,4 @@
+Docker learning
+
+# Delete all containers
+for ci in $(sudo docker ps -a | grep -v CONTA | cut -f 1 -d " ");do sudo docker rm $ci; done

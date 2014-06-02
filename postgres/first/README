@@ -1,0 +1,12 @@
+http://docs.docker.io/examples/postgresql_service/
+
+# Fixed step in Dockerfile where I made a mistake
+sudo docker build --rm --tag eg_postgresql .
+sudo docker ps -a
+sudo docker images
+CONTAINER_ID = sudo docker run --detach --publish-all --name pg_test eg_postgresql
+sudo docker ps -a  # get port
+psql -U docker -h 0.0.0.0 -p 49154 docker
+sudo docker ps -a
+sudo docker stop $CONTAINER_ID
+sudo docker rm $CONTAINER_ID

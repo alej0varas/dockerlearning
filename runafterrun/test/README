@@ -1,0 +1,10 @@
+Trying to undestand why even postgres was started client couldn't connect.
+
+It's because eache command is run in a different container so calling
+
+RUN /etc/init.d/postgres start
+RUN psql ...
+
+Gives an error about server not running. This is fine. It should be run like
+
+RUN /etc/init.d/postgres start && psql ...

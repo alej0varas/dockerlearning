@@ -1,0 +1,5 @@
+Postgres with user specified database/username/password
+
+sudo docker build --rm --tag eg_postgresql .
+sudo docker run --rm --env USERNAME=djangouser --env PASSWORD=djangopassword --env DATABASE=djangodatabase --detach --publish-all --name pg_test eg_postgresql bash /tmp/create_database.sh
+sudo docker run --detached --publish-all --name pg_test eg_postgresql
