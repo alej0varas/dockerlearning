@@ -1,0 +1,4 @@
+# Postgres
+
+docker build --rm --tag postgresql .
+docker run --rm --publish 15432:5432 --name postgresql postgresql
